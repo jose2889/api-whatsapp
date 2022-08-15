@@ -17,7 +17,7 @@ Hola amigos me gusta mucho este proyecto pero por cuestiones de tiempo se me dif
 #### Acceso rápido 
 > Si tienes una cuenta en __heroku__ puedes desplegar este proyecto con (1 click)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/leifermendez/bot-whatsapp) 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/jose2889/api-whatsapp) 
 
 > Comprarme un cafe!
 
