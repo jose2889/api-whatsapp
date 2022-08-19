@@ -208,6 +208,14 @@ app.post('/confirmationws', (req, res) => {
 }
 )
 
+app.post('/', (req, res) => {
+
+  
+    res.send({ status: 'En linea' })
+}
+)
+
+
 
 checkEnvFile();
 
