@@ -137,7 +137,7 @@ console.log("escuchando mensajes ", from, body, hasMedia)
 
 client = new Client({
         authStrategy: new LocalAuth(),
-        puppeteer: { headless: true }
+        puppeteer: { headless: true, args: ['--no-sandbox']}
     });
     
 client.on('qr', qr => generateImage(qr, () => {
