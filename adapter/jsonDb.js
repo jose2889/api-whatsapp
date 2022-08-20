@@ -17,7 +17,7 @@ const saveMessageJson = (message, trigger, number) => new Promise( async(resolve
     }
 })
 
-const saveReservationIdJson = (message, number, reservationId ) => new Promise( async(resolve,reject) =>{
+const saveReservationIdJson = (message, number, tokenConfirm, tokenCancel ) => new Promise( async(resolve,reject) =>{
     try {
         const engine = new StormDB.localFileEngine( Path.join(__dirname, `/../chats/db.json`) );
         const db = new StormDB(engine);
