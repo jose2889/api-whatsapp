@@ -181,7 +181,7 @@ server.listen(port, () => {
 app.post('/notificationws', (req, res) => {
     
     const { message, number } = req.body
-
+    number = `${number}@c.us`;
     let msj = 
         `Estimado *${message}* le notificamos que se ha agendado su reserva con exito 🙂🤖\n Para su comodidad se ha enviado una notificación a su correo donde podra gestionar su reserva \n`;
     
