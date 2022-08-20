@@ -180,8 +180,9 @@ server.listen(port, () => {
 
 app.post('/notificationws', (req, res) => {
     
-    const { message, number } = req.body
-    number = `${number}@c.us`;
+    let { message, number } = req.body
+    number = cleanNumber(number);
+    console.log("Enviando al numero ", number)
     let msj = 
         `Estimado *${message}* le notificamos que se ha agendado su reserva con exito 🙂🤖\n Para su comodidad se ha enviado una notificación a su correo donde podra gestionar su reserva \n`;
     
@@ -193,9 +194,11 @@ app.post('/notificationws', (req, res) => {
 
 app.post('/confirmationws', (req, res) => {
     
-    const { message, number, reservationId } = req.body
+    let { message, number, tokenConfirm, tokenCancel } = req.body
 
+    number = cleanNumber(number)
 
+    console.log("request ", req.body)
 
     let msj =
         `Estimado *${message}* le recordamos que el dia 12-12-2022 a las 13:45 tiene reservado una cita en Roslin \n Marque *1* para confirmar su reserva\n Marque *2* para canceular su reserva\n`;
