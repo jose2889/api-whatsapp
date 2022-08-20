@@ -106,9 +106,9 @@ const lastTrigger = (number) => new Promise((resolve, reject) => {
  * @param {*} number 
  * @param {*} message 
  */
-const readChat = async (message, number, id) => {
+const readChat = async (message, number, tokenConfirm, tokenCancel) => {
     number = cleanNumber(number)
-    await saveMessage( message, number, id )
+    await saveMessage( message, number, tokenConfirm, tokenCancel )
     console.log('Saved')
 }
 

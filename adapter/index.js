@@ -73,14 +73,14 @@ const getIA = (message) => new Promise((resolve, reject) => {
  * @param {*} number 
  * @returns 
  */
-const saveMessage = ( message, number, id  ) => new Promise( async (resolve, reject) => {
+const saveMessage = ( message, number, tokenConfirm, tokenCancel  ) => new Promise( async (resolve, reject) => {
      switch ( process.env.DATABASE ) {
          case 'mysql':
              resolve( await saveMessageMysql( message, trigger, number ) )
              break;
          case 'none':
             // resolve( await saveMessageJson( message, trigger, number ) )
-             resolve( await saveReservationIdJson( message, number, id ) )
+             resolve( await saveReservationIdJson( message, number, tokenConfirm, tokenCancel ) )
              break;
          default:
              resolve(true)

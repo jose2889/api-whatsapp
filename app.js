@@ -205,7 +205,7 @@ app.post('/confirmationws', (req, res) => {
     
 
     client.sendMessage(number, message);
-    readChat(message, number, reservationId)
+    readChat(message, number, tokenConfirm, tokenCancel)
   
     res.send({ status: 'Ok' })
 }

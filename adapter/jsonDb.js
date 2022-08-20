@@ -24,12 +24,12 @@ const saveReservationIdJson = (message, number, reservationId ) => new Promise( 
         // set default db value if db is empty
         db.default({ messages: [] });
         // add new users entry
-        db.get("messages").push({ message, reservationId, number, date });
+        db.get("messages").push({ message, tokenConfirm, tokenCancel, number, date });
         db.save();
         resolve('Saved')
 
-        let data = db.get("messages").filter(i => i.reservationId > 12).value(); 
-        console.log(db.get("messages").get("reservationId"));
+        let data = db.get("messages").filter(i => i.number == number).value(); 
+       
         console.log(data); 
     } catch (error) {
         console.log(error)
